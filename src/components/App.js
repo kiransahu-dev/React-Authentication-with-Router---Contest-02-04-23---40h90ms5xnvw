@@ -24,23 +24,20 @@ const App = () => {
             </li>
           </ul>
         </nav>
-
-        <Switch>
           <Switch>
-      <Route path='/register'>
-        <Register />
-      </Route>
-      <Route path='/login'>
-        <Login setIsLoggedIn={setIsLoggedIn} />
-      </Route>
-      {isLoggedIn && (
-        <Route path='/store'>
-          <Store setIsLoggedIn={setIsLoggedIn} />
-        </Route>
-      )}
-      <Redirect to='/login' />
-    </Switch>
-        </Switch>
+            <Route path='/register'>
+              <Register />
+            </Route>
+          <Route path='/login'>
+            <Login setIsLoggedIn={setIsLoggedIn} />
+          </Route>
+          {isLoggedIn && (
+          <Route path='/store'>
+            <Store setIsLoggedIn={setIsLoggedIn} />
+          </Route>
+          )}
+        <Redirect to='/login' />
+      </Switch>
       </BrowserRouter>
     </div>
   )
