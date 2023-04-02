@@ -1,6 +1,10 @@
 import React from 'react';
 
 function Store() {
+    const Store = ({ isLoggedIn, handleLogout }) => {
+        if (!isLoggedIn) {
+        return <Redirect to='/login' />;
+    }
     
     return (
         <div className='store'>
