@@ -1,10 +1,11 @@
 import React from 'react';
 
 function Store() {
-    const Store = ({ isLoggedIn, handleLogout }) => {
-        if (!isLoggedIn) {
-        return <Redirect to='/login' />;
-    }
+    const history = useHistory();
+
+    const handleLogout = () => {
+        history.push('/login');
+    };
     
     return (
         <div className='store'>
