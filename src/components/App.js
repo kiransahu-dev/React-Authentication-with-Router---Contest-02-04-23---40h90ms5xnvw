@@ -26,15 +26,20 @@ const App = () => {
         </nav>
 
         <Switch>
-          <Route>
-            <Register />
-          </Route>
-          <Route>
-            <Login  />
-          </Route>
-          <Route>
-            <Store />
-          </Route>
+          <Switch>
+      <Route path='/register'>
+        <Register />
+      </Route>
+      <Route path='/login'>
+        <Login setIsLoggedIn={setIsLoggedIn} />
+      </Route>
+      {isLoggedIn && (
+        <Route path='/store'>
+          <Store setIsLoggedIn={setIsLoggedIn} />
+        </Route>
+      )}
+      <Redirect to='/login' />
+    </Switch>
         </Switch>
       </BrowserRouter>
     </div>
